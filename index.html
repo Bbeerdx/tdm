@@ -15,6 +15,7 @@
             <a href="#" data-section="alerts">Alerts</a>
             <a href="#" data-section="donation">Donation</a>
             <a href="#" data-section="about">About</a>
+            <a href="#" data-section="volunteer">Volunteer</a>
             <button id="loginBtn" class="login-btn">Login</button>
         </div>
     </nav>
@@ -43,33 +44,69 @@
             </div>
         </section>
 
-        <section id="alerts" class="section">
-            <h2>Disaster Alerts</h2>
-            <div class="report-form">
-                <h3>Report a Disaster</h3>
-                <form id="reportForm">
-                    <div class="form-group">
-                        <label for="location">Location (lat,lng)</label>
-                        <input type="text" id="location" name="location" required placeholder="23.8367,91.2795">
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Type</label>
-                        <select id="type" name="type" required>
-                            <option value="flood">Flood</option>
-                            <option value="earthquake">Earthquake</option>
-                            <option value="landslide">Landslide</option>
-                            <option value="fire">Fire</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" required></textarea>
-                    </div>
-                    <button type="submit">Submit Report</button>
-                </form>
+    <section id="alerts" class="section">
+        <h2>Disaster Alerts</h2>
+        <div class="report-form">
+            <h3>Report a Disaster</h3>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="location">Location (lat,lng)</label>
+                    <input type="text" id="location" name="location" required placeholder="23.8367,91.2795">
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type" required>
+                        <option value="flood">Flood</option>
+                        <option value="earthquake">Earthquake</option>
+                        <option value="landslide">Landslide</option>
+                        <option value="fire">Fire</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <button type="submit">Submit Report</button>
+            </form>
+        </div>
+    
+        <div class="preparation-tips">
+            <h3>Preparation Tips</h3>
+            <div id="earthquakeTips" class="tips">
+                <h4>Earthquake</h4>
+                <ul>
+                    <li>Drop, cover, and hold on during an earthquake.</li>
+                    <li>Secure heavy furniture and appliances to walls.</li>
+                    <li>Keep an emergency kit with food, water, and medical supplies.</li>
+                </ul>
             </div>
-        </section>
-
+            <div id="floodTips" class="tips">
+                <h4>Flood</h4>
+                <ul>
+                    <li>Move to higher ground and avoid floodwaters.</li>
+                    <li>Turn off electricity and gas supply before evacuation.</li>
+                    <li>Keep important documents in waterproof bags.</li>
+                </ul>
+            </div>
+            <div id="landslideTips" class="tips">
+                <h4>Landslide</h4>
+                <ul>
+                    <li>Avoid steep slopes and unstable terrain.</li>
+                    <li>Identify safe evacuation routes in advance.</li>
+                    <li>Listen to weather updates and warnings.</li>
+                </ul>
+            </div>
+            <div id="fireTips" class="tips">
+                <h4>Fire</h4>
+                <ul>
+                    <li>Install smoke detectors and check them regularly.</li>
+                    <li>Practice fire drills and know your escape routes.</li>
+                    <li>Keep fire extinguishers handy and know how to use them.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
         <section id="donation" class="section">
             <h2>Make a Donation</h2>
             <div class="donation-container">
@@ -126,6 +163,22 @@
                 </div>
             </div>
         </section>
+        <section id="volunteer" class="section">
+            <h2>Join as Volunteer</h2>
+            <form id="volunteer-form" class="volunteer-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone" required>
+                <select required>
+                    <option value="">Select Expertise</option>
+                    <option value="medical">Medical</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="rescue">Rescue Operations</option>
+                </select>
+                <textarea placeholder="Additional Information"></textarea>
+                <button type="submit">Register as Volunteer</button>
+            </form>
+        </section>
     </main>
 
     <div id="loginModal" class="modal">
@@ -165,5 +218,6 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script type="module" src="/main.js"></script>
+    <script src="js/volunteer.js"></script>
 </body>
 </html>
